@@ -1,9 +1,6 @@
-<ion-view title="Who are you" id="page1" style="background-color:#2F33EB;">
-  <ion-nav-buttons side="left" class="has-header">
-    <button class="button button-positive icon ion-ios-home"></button>
-  </ion-nav-buttons>
-  <ion-content padding="true" class="has-header">
-    <a ui-sref="stewardControls()" id="whoAreYou-button1" class="button button-positive button-large button-block">Steward</a>
-    <a ui-sref="clientControls()" id="whoAreYou-button2" class="button button-positive button-large button-block">Client</a>
+<ion-view title="Who are you" id="main" style="background-color:#2F33EB;">
+  <ion-content class="has-header main-page" scroll="false">
+    <button class="button button-positive button-large button-block" ng-click="location.url('client')">Client</a>
+    <button class="button button-positive button-large button-block" ng-click="location.url('steward')">Steward</a>
   </ion-content>
 </ion-view>

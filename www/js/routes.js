@@ -9,7 +9,7 @@ angular.module('app.routes', [])
   $stateProvider
     
 
-      .state('whoAreYou', {
+  .state('whoAreYou', {
     url: '/start',
     templateUrl: 'templates/whoAreYou.html',
     controller: 'whoAreYouCtrl'
@@ -22,7 +22,7 @@ angular.module('app.routes', [])
   })
 
   .state('stewardControls', {
-    url: '/stewardControls',
+    url: '/steward',
     templateUrl: 'templates/stewardControls.html',
     controller: 'stewardControlsCtrl'
   })
@@ -31,6 +31,12 @@ angular.module('app.routes', [])
     url: '/generateCode',
     templateUrl: 'templates/personalCode.html',
     controller: 'personalCodeCtrl'
+  })
+
+  .state('stewardSettings', {
+    url: '/settings',
+    templateUrl: 'templates/stewardSettings.html',
+    controller: 'stewardSettingsCtrl'
   })
 
 $urlRouterProvider.otherwise('/start')

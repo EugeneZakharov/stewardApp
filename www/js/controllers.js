@@ -1,34 +1,41 @@
 angular.module('app.controllers', [])
   
-.controller('whoAreYouCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+.controller('whoAreYouCtrl', ['$scope', '$stateParams', '$location',
+function ($scope, $stateParams, $location) {
+    $scope.location = $location;
 }])
    
-.controller('clientControlsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+.controller('clientControlsCtrl', ['$scope', '$stateParams', '$location',
+function ($scope, $stateParams, $location) {
+    $scope.location = $location;
 }])
    
-.controller('stewardControlsCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+.controller('stewardControlsCtrl', ['$scope', '$stateParams', '$location',
+function ($scope, $stateParams, $location) {
+    $scope.location = $location;
+}])
 
+.controller('stewardSettingsCtrl', ['$scope', '$stateParams', '$location',
+function ($scope, $stateParams, $location){
+    $scope.tableNumber = parseInt(window.localStorage.getItem("tableNumber")) || 1;
 
+    $scope.save = function(){
+        window.localStorage.setItem("tableNumber", $scope.tableNumber);
+        $location.url('/steward');
+    }
+
+    $scope.location = $location;
 }])
    
-.controller('personalCodeCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
-
-
+.controller('personalCodeCtrl', ['$scope', '$stateParams', '$location',
+function ($scope, $stateParams, $location) {
+    $scope.location = $location;
+    
+    var time = new Date().getTime();
+    
+    $("#qrcode").qrcode({
+        render: "canvas",
+        text: time.toString()
+    });
 }])
  
