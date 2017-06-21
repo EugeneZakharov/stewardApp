@@ -1,5 +1,12 @@
 {
   "name": "steward",
   "app_id": "",
-  "type": "ionic1"
+  "type": "ionic1",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "scss/**/*"
+  ]
 }

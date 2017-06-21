@@ -1,0 +1,14 @@
+<ion-view title="Personal Code" id="page4" style="background-color:#2F33EB;">
+  <ion-nav-buttons side="left" class="has-header">
+    <button class="button button-positive icon ion-ios-barcode"></button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <div>
+      <script type="text/javascript" src="jquery.qrcode.min.js"></script>
+      <div id="qrcode"></div>
+      <script>
+        jquery('#qrcode').qrcode("this plugin is great");
+      </script>
+    </div>
+  </ion-content>
+</ion-view>
